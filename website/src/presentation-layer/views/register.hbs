@@ -1,0 +1,38 @@
+<link href = "/CSS/login.css" rel= "stylesheet" type = "text/css">
+
+<title>REGISTER</title>
+
+<div class="center">
+
+    <div class="register_logo">
+        <span style="color:#FFF">REGISTER</span>
+    </div>
+    {{#if errors.length}}
+        {{#each errors}}
+            <p class="login_error_msg">{{this}}</p>
+        {{/each}}
+    {{/if}}
+    <div class="register_center" >
+        {{#if errors.length}}
+            {{#each errors}}
+                <p class="login_error_msg">{{this}}</p>
+            {{/each}}
+        {{/if}}
+        <form action="/account/sign-up" method="POST" name="register">
+            <input type="hidden" name="_csrf" value="{{csrfToken}}">
+            <div class="form-group has-success">
+                <label class="form-label" for="input-example-1">Username:</label>
+                <input class="form-input" type="text" value = "{{username}}" name="username" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="input-example-1">Password:</label>
+                <input class="form-input" type="password" value="{{password}}" name="password" placeholder="Password" required>
+            </div>      
+            <div class="form-group">
+                <label class="form-label" for="input-example-1">Repeat Password:</label>
+                <input class="form-input" type="password" value= "{{confirmPassword}}" name="repeat_password" placeholder="Repeat Password" required>
+            </div> 
+                <button class="btn" type="submit" value="register">Register</button>
+        </form>
+    </div>
+</div>

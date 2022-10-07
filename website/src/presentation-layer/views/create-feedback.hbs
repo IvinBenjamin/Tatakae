@@ -1,0 +1,39 @@
+<link href = "CSS/feedback.css" rel= "stylesheet" type = "text/css" >
+
+<title>Create a Feedback</title>
+
+<div id="user_section">
+	
+		{{#if errors.length}}
+			{{#each errors}}
+				<p class="login_error_msg">{{this}}</p>
+			{{/each}}
+		{{/if}}
+		{{#if isLoggedIn}}
+			<p class="createTitle">CREATE A FEEDBACK</p>
+			<form action="/feedbacks/createFeedback" method="POST">
+				<input type="hidden" name="_csrf" value="{{csrfToken}}">
+				<div id="feedbackTitle">
+					Title: <input type="text" name="title">
+				</div>
+				<div>
+					Anime: <input type="text" name="anime">
+				</div>
+				<div id="update_textarea">
+					content: <textarea class="update_textarea" type="text" name="content" rows="4" cols="60"> </textarea>
+				</div>
+				<div>
+					Genre: <input type="text" name="genre">
+				</div>
+				<div id="feedbackTitle">
+					Rate: <input type="number" max="10" name="rate">/10⭐
+				</div>
+				<div id="submit_update">
+					<input class="submit_update_btn" type="submit" name="create-btn" value="CREATE">
+				</div>	
+			</form>
+			{{else}}
+				<p class="notLoggedIn">You Need To Be Logged In To Post A Feedback.</p>
+		{{/if}}
+
+</div>

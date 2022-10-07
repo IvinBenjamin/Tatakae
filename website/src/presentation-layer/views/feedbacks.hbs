@@ -1,0 +1,24 @@
+<link href = "CSS/feedback.css" rel= "stylesheet" type = "text/css" >
+
+
+<title>Feedbacks</title>
+{{#if dbErrorOccurred}}
+    <p class="admin_top">Can't display the page now, try again later.</p>
+{{else}}
+    {{#if isLoggedIn}}
+        <p class="creat"><a href="/feedbacks/newFeedback/{{user.id}}">✎Post</a></p>
+    {{/if}}
+    <p class="feedbacks_top">Latest Feedbacks:</p>
+    {{#if feedbacks.length}}
+        <div class="displayed_list">
+            {{#each feedbacks}}
+                    <a href="/feedbacks/{{id}}" class="eachFeedback">
+                    <p class="feedbackTitle">{{title}}</p>
+                    <p class="rate">{{rate}}/10⭐</p>
+                    <p class="animeName">{{anime}}</p>
+            {{/each}}
+        </div>
+    {{else}}
+        <p class="no-content">Theres no Feedbacks</p>
+    {{/if}}
+{{/if}}

@@ -1,0 +1,11 @@
+<div class="">
+	<img src="/images/ErenPFP.jpg" class="pfpView"></a>
+</div>
+
+
+{{#if isLoggedIn}}
+			<form action="/account/sign-out"  method="POST"> 
+				<input type="hidden" name="_csrf" value="{{csrfToken}}">
+				<button class="logout-button" type="submit" name="logout" id="logout">Logout</button>
+			</form>
+{{/if}}	

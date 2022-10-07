@@ -1,0 +1,16 @@
+<link href = "/CSS/profile.css" rel= "stylesheet" type = "text/css" >
+
+<div class="profilePicView">
+	<img src="/images/ErenPFP.jpg" class="pfpView"></a>
+
+	{{#if isLoggedIn}}
+			<form action="/account/sign-out"  method="POST"> 
+				<input type="hidden" name="_csrf" value="{{csrfToken}}">
+
+				<p>{{}}</p>
+				<button class="logout-button" type="submit" name="logout" id="logout">Logout</button>
+			</form>
+{{/if}}	
+</div>
+
+

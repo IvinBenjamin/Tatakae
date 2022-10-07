@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
+        <link href="/CSS/navbar.css" rel="stylesheet" type="text/css" >
+		<link href="/CSS/login.css" re="stylesheet" type="text/css" >
+     
+</head>
+<body>
+<div id="nav">
+	<div id="menu">
+			<a href="/"><img src="/images/watchlist_logo.png" class="mainlogo"></a>
+		<div id="icons">
+			<li><a href="/" class="homeButton">HOME</a></li>
+			<li><a href="/feedbacks" class="feedbackButton">FEEDBACK</a></li>
+		{{#if isLoggedIn}}
+			<a href="/profile.hbs" src="/profilePictures/ErenPFP.jpg"></a>
+		{{/if}}	
+			{{#unless isLoggedIn}}
+				<li><a href="/account/sign-in" class="loginButton">LOGIN</a></li>
+			{{/unless}}
+		</div>
+	</div>
+</div>
+{{{body}}} 
+</body>
+</html>
