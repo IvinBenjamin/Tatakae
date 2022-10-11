@@ -28,6 +28,10 @@ module.exports= function({userRepository}){
         userRepository.getAccountByUsername(username, callback)
     }
 
+    exports.getUserById = function(id, callback){
+        userRepository.getUserById(id, callback)
+    }
+
     exports.login = function(user, callback){
         const validationErrors = userValidator.validateUser(user)
         if(validationErrors.length > 0){

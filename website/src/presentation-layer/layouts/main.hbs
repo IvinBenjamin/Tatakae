@@ -15,7 +15,7 @@
 			<li><a href="/" class="homeButton">HOME</a></li>
 			<li><a href="/feedbacks" class="feedbackButton">FEEDBACK</a></li>
 		{{#if isLoggedIn}}
-			<a href="/profile"><img src="/images/ErenPFP.jpg" class="profilePicture"></a>
+			<a href="/profile/{{user.id}}"><img src="/images/ErenPFP.jpg" class="profilePicture"></a>
 		{{/if}}	
 
 		{{#unless isLoggedIn}}

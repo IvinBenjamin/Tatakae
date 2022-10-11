@@ -3,7 +3,7 @@
 
 <title>Feedbacks</title>
 {{#if dbErrorOccurred}}
-    <p class="admin_top">Can't display the page now, try again later.</p>
+    <p>Can't display the page now, try again later.</p>
 {{else}}
     {{#if isLoggedIn}}
         <p class="creat"><a href="/feedbacks/newFeedback/{{user.id}}">✎Post</a></p>

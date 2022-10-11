@@ -38,6 +38,20 @@ module.exports = function(){
         })
     }
 
+    exports.getUserById = function(id,callback){
+        const query = `SELECT username FROM user WHERE userId = ? `
+        const values =[id]
+        connection.query(query,values,function(error, user){
+            if(error){
+                callback(['internalError'],null)
+            }else{
+                
+                callback([],user[0])
+            }
+        
+        })
+    }
+
     return exports
 }
 

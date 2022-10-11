@@ -66,8 +66,18 @@
 .animeName{
     font-size: 25px;
 }
-
-
+.notLoggedIn{
+    font-size: 50px;
+    font-family: 'Electrolize', sans-serif;
+    font-weight: 900;
+    background-color:rgb(255, 0, 0);
+}
+.no-content{
+    font-size: 50px;
+    font-family: 'Electrolize', sans-serif;
+    font-weight: 900;
+    margin-left: 5%;
+}
 
 
 

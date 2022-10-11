@@ -29,24 +29,24 @@ module.exports = function({feedbackRepository}){
     }
 
 
-    exports.updateFeedback = function(newFeedback,auth, callback){
-        const errors = feedbackValidator.validateFeedback(newFeedback, callback)
-        if(errors.length > 0){
-            callback(errors,null)
-            return
-        }
-        if(auth.userId === auth.authorId){
-            feedbackRepository.updateFeedbackById(newFeedback, callback)
-        }
-        else callback(['notLoggedIn'], null)
-    }
-
-    exports.deleteFeedback = function(id,auth, callback){        
-        if(auth.userId === auth.authorId){
-            feedbackRepository.deleteFeedbackById(id, callback)
-        }
-        else callback(['notLoggedIn'], null)
-    }
+    //exports.updateFeedback = function(newFeedback,auth, callback){
+    //    const errors = feedbackValidator.validateFeedback(newFeedback, callback)
+    //    if(errors.length > 0){
+    //        callback(errors,null)
+    //        return
+    //    }
+    //    if(auth.userId === auth.authorId){
+    //        feedbackRepository.updateFeedbackById(newFeedback, callback)
+    //    }
+    //    else callback(['notLoggedIn'], null)
+    //}
+//
+    //exports.deleteFeedback = function(id,auth, callback){        
+    //    if(auth.userId === auth.authorId){
+    //        feedbackRepository.deleteFeedbackById(id, callback)
+    //    }
+    //    else callback(['notLoggedIn'], null)
+    //}
     return exports
 
 }
