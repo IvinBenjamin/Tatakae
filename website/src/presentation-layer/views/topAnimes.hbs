@@ -1,0 +1,55 @@
+<link href = "/CSS/main.css" rel= "stylesheet" type = "text/css" >
+
+<title>Top Animes of All Time</title>
+
+
+
+<p class="watchlistText">Top Animes of All Time:</p>
+
+
+<div id="animeList">
+</div>
+
+
+<script>
+
+fetchTopAnimes();
+
+function fetchTopAnimes(){
+    const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': '8a0a32071dmshc3f86074e4ab522p137892jsn57fc53999b6f',
+                'X-RapidAPI-Host': 'anime-db.p.rapidapi.com'
+            }
+        };
+                
+        fetch('https://anime-db.p.rapidapi.com/anime?page=1&size=100&sortBy=ranking&sortOrder=asc', options)
+            .then(response => {
+                if(!response.ok){
+                    throw Error("ERROR")
+                }
+                return response.json()
+            })
+            .then(data => {
+                const animeData = data.data
+                    .map(anime => {
+                    return `
+                    <div class="animes">
+                        <img class="animeImage" src="${anime.image}">
+                        <p class="animeTitle">Title: ${anime.title}</p>
+                        <p class="animeRanking">Ranking: ${anime.ranking}</p>
+                        <p class="animeEpisodes">Episodes: ${anime.episodes}</p>
+                        <p class="animeStatus">Status: ${anime.status}</p>
+
+                    </div>	
+                    `
+                }).join("")
+                document.querySelector('#animeList').insertAdjacentHTML('afterbegin', animeData)
+            })
+            .catch(err => {
+                console.error(err)
+            });
+	}
+
+</script>

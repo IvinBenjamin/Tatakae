@@ -1,4 +1,4 @@
-<link href = "CSS/feedback.css" rel= "stylesheet" type = "text/css" >
+<link href = "/CSS/feedback.css" rel= "stylesheet" type = "text/css" >
 
 <title>feedback</title>
 
@@ -10,13 +10,15 @@
 				<p class="admin_top">Can't display the page now, try again later.</p>
 			{{/if}}
 
-			<p class="username">Posted By: {{feedback.username}}</p>
-			<div class="feedback">					
-				<p class="title">Title: {{feedback.title}}</p>
-				<p class="title">Anime: {{feedback.anime}}</p>
-				<p class="title">Conten: {{feedback.content}}</p>
-				<p class="title">Rate: {{feedback.rate}}</p>/10⭐
-				<p class="title">Genre: {{feedback.genre}}</p>
+			<p class="username">Posted By: {{feedback.username}}. {{feedback.date}}</p>
+			<div class="feedback">
+				<div class="feedbackStart">				
+					<p class="feedbackAnime">{{feedback.anime}}</p>
+					<p class="feedbacklRate">{{feedback.rate}}/10⭐</p>
+				</div>	
+				<p class="feedbackContent">{{feedback.content}}</p>		
+				<p class="feedbackGenre">{{feedback.genre}}</p>
+				<div class="feedbackFinished"></div>
 			</div>
 
 		</div>
@@ -32,28 +34,29 @@
 					{{/if}}
 					<form action="/comment/{{feedback.id}}/create" method="POST">
 						<div id="comment_textarea">
-							<input type="hidden" name="_csrf" value="{{csrfToken}}">
 
 							<div id="textarea">
-								<p class="title">Comment:</p>
-									<textarea class="comment_textarea" type="text" name="content" rows="6" cols="60" >{{comment.content}} </textarea>
-									<input class="submit_comment_btn" type="submit" name="create-btn" value="POST">
+									<textarea class="comment_textarea" type="text" name="content" rows="6" cols="60" style="resize: none;" placeholder="What are your thoughts?">{{comment.content}} </textarea>
+									<input class="submit_comment_btn" type="submit" name="create-btn" value="Comment">
 							</div>
 						</div>
 					</form>
 				</div>
     			{{/if}}
 		</div>
-		<div class="content-section">
+		<div class="commentSection">
+			<div class="commentStarts"></div>
 			{{#if comments.length}}
 				{{#each comments}}
 					<div class="comment_area">
-						<p class="title">{{username}}</p>
-						<p class="the_comment">{{content}}</p>
+						<p class="commentOwner">{{username}} . {{date}}</p>
+						<p class="commentContent">{{content}}</p>
 					</div>
+					<div class="commentEnds"></div>
 				{{/each}}
+				
 			{{else}}
-				<p class="title">!!! Theres No Comments To Be Found !!!</p>
+				<p class="noComments">!!! Theres No Comments, Be the First to Comment !!!</p>
 			{{/if}}
 		</div>
 			

@@ -30,7 +30,6 @@ module.exports = function({userRouter,variusRouter,feedbackRouter, commentRouter
 
   
   app.use(cookieParser())
-  csurf({ cookie: true })
   app.use(express.static(path.join(__dirname,'public')))
 
 
@@ -49,27 +48,9 @@ module.exports = function({userRouter,variusRouter,feedbackRouter, commentRouter
     next()
   })
 
-  app.use(csurf())
-
-  app.use(function (request, response, next) {
-    response.locals.csrfToken = request.csrfToken
-    next()
-  })
-
-  app.use(function (error, request, response, next) {
-    if (error.code !== 'EBADCSRFTOKEN') return next(error)
-    response.status(403)
-    const model={
-      badCsrfToken: true,
-      username: request.user.username
-    }
-    response.render('index.hbs',model)  
-    
-  })
-
 
   app.use('/comment',commentRouter)
-  app.use('/feedbacks',feedbackRouter)
+  app.use('/feedbacks',feedbackRouter, express.static('uploads'))
   app.use('/account',userRouter)
   app.use('/',variusRouter)
 

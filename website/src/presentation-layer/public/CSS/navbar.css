@@ -57,7 +57,7 @@ a{
     margin-left: 500px;
     border-radius: 50%;
     max-width: 70px;
-    margin-top: 1%;
+    margin-top: 3%;
 }
 
 
@@ -73,8 +73,8 @@ a{
         display: inline-block;
         line-height: 10px;
         margin: 10px;
-        font-size: small;
-        margin-top: 20px;
+        font-size: 10px;
+        margin-top: 22px;
     }
     #menu{
         margin-right: -4%;
@@ -89,8 +89,8 @@ a{
     }
     .profilePicture{
         margin-left: 50%;
-        width: 40px;
-        margin-top: 15%;
+        width: 30px;
+        margin-top: 12px;
     }
     .loginButton{
         margin-left: 50%;
@@ -108,7 +108,8 @@ a{
         padding: 0;
     }
     #menu{
-        margin-top: -10px
+        margin-top: -10px;
+        height: 45px;
     }
     #icons li{
         display: block;
@@ -125,6 +126,7 @@ a{
   @media screen and (min-width: 400px) and (max-width:1100px) {
     .profilePicture{
         margin-left: 80%;
+        margin-top: 15px;
     }
     .loginButton{
         margin-left: 80%;

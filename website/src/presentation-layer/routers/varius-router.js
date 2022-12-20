@@ -1,5 +1,4 @@
 const express = require('express')
-const fetch = require('node-fetch');
 
 module.exports = function(){
     const router = express.Router()
@@ -15,6 +14,10 @@ module.exports = function(){
     router.get('/profile', (req, res) => {
         res.render('profile.hbs')
     })
-    
+
+    router.get('/topAnimes', (req, res) => {
+        res.render('topAnimes.hbs')
+    })
+
     return router
 }

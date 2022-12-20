@@ -13,7 +13,7 @@ module.exports= function({userRepository}){
 
     exports.createUser = async (newUser, callback) =>{
         
-        const errors = userValidator.validateUser(newUser)
+        const errors = userValidator.validateNewUser(newUser)
         
         if(errors.length > 0){
             callback(errors,null)

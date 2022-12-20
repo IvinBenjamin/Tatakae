@@ -1,5 +1,9 @@
 const express = require('express')
 const jwt = require('jsonwebtoken')
+const multer = require('multer')
+
+const upload = multer({storage:multer.memoryStorage()})
+
 
 module.exports = function({feedbackManager, commentManager}){
     const router = express.Router()
@@ -34,22 +38,22 @@ module.exports = function({feedbackManager, commentManager}){
         res.render('create-feedback.hbs')
     })
 
-    router.post('/newFeedback', (req, res) => {
+    router.post('/newFeedback',upload.single('imageUpload'), (req, res) => {
         var currentdate = new Date(); 
         var datetime = currentdate.getFullYear() + "/"
                 + (currentdate.getMonth()+1)  + "/" 
                 + currentdate.getDate() + " "  
-                + currentdate.getHours() + ":"  
+                + (currentdate.getHours()+2) + ":"  
                 + currentdate.getMinutes() + ":" 
                 + currentdate.getSeconds();
 
         const newFeedback ={
-            title: req.body.title,
-            content: req.body.content,
             anime:req.body.anime,
-            rate:req.body.rate,
-            genre:req.body.genre,
+            content: req.body.content,
+            rate: req.body.rate,
+            genre: req.body.genre,
             date: datetime,
+            image: req.file,
             userId: req.session.userId,
         }
 
@@ -60,7 +64,6 @@ module.exports = function({feedbackManager, commentManager}){
         
         feedbackManager.createFeedback(newFeedback,auth, function(errors){
             const errorTranslations = {
-                titleTooShort: "the title is needs to be at least 4 characters",
                 animeTooShort: "the anime name is supposed to be at least 4 characters",
                 internalError: "Cant query out the request now.",
                 contentTooShort:"the content is supposed to be at least 3 characters",
@@ -72,9 +75,8 @@ module.exports = function({feedbackManager, commentManager}){
                 const errorMessages = errors.map(e => errorTranslations[e])
                 const model = {
                     errors: errorMessages,
-                    title: newFeedback.title,
-                    content: newFeedback.content,
                     anime: newFeedback.anime,
+                    content: newFeedback.content,
                     rate: newFeedback.rate,
                     genre: newFeedback.genre,
                 }

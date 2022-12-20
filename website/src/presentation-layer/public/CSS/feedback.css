@@ -1,11 +1,16 @@
+#comment_table{
+    background: #1b1b1b;
+}
+/* feedbacks.hbs*/
+
 .displayed_list{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     margin-left: 5%;
     margin-right: 5%;
+    
 }
-
 .creat{
     margin-left: 5%;
 }
@@ -35,73 +40,218 @@
 .creat:hover{
     transform: scale(1.15);
 }
-
-.createTitle{
-    margin-left: 5%;
-    font-family: 'Electrolize', sans-serif;
-    font-size: xx-large;
-    color:rgb(255, 0, 0);
-    width: fit-content;
-    font-weight: 900;
-    font-size: 45px;
-}
-
-#createTitle{
-    margin-left: 5%;
-}
-
 .eachFeedback{
     text-align: center;
     background-color: rgb(117, 117, 117);
     grid-template-columns: repeat(4, 1fr);
     border-radius: 2%;
+    max-width: 120%;
+    
+}
+.eachFeedback:hover{
+    transform: scale(1.05);
+    border-color: red;
+    border-style: solid;
+    border-width: 2px;
 }
 
-.feedbackTitle{
-    font-size: 35px;
+.no-content{
+    font-size: 30px;
+    font-family: 'Electrolize', sans-serif;
+    font-weight: 900;
+    margin-left: 5%;
 }
-.rate{
+/* /////////////////////////////////////*/
+
+/* create-feedback.hbs & create-comment.hbs*/
+
+.createTitle{
+    margin-left: 5%;
+    font-family: 'Electrolize', sans-serif;
+    font-size: xx-large;
+
+    width: fit-content;
+    font-weight: 900;
     font-size: 45px;
+    
 }
-.animeName{
-    font-size: 25px;
-}
+
 .notLoggedIn{
     font-size: 50px;
     font-family: 'Electrolize', sans-serif;
     font-weight: 900;
     background-color:rgb(255, 0, 0);
 }
-.no-content{
-    font-size: 50px;
+.createAnime{
+    margin-left: 5%;
+    margin-top: -2%;
+    width: 500px;
+    height: 40px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.createContent{
+    margin-left: 5%;
+    margin-top: 1%;
+    width: 500px;
+    height: 120px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.createGenre{
+    margin-left: 5%;
+    margin-top: 1%;
+    width: 500px;
+    height: 40px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.createRate{
+    margin-left: 5%;
+    margin-top: 1%;
+    width: 150px;
+    height: 40px;
+}
+.submitFeedback{
+    margin-top: 3%;
+    width: 500px;
+    margin-left: 5%;
+    background-color: rgb(0, 0, 0);
+    color: #ffffff;
+    height: 30px;
     font-family: 'Electrolize', sans-serif;
     font-weight: 900;
+    border-style: none;
+}
+.submitFeedback:hover{
+    background-color: rgb(255, 0, 0);
+}
+.creatingError{
+    margin-left: 5%;
+    color: red;
+}
+
+
+/* /////////////////////////////////////*/
+
+/* feedback.hbs*/
+
+.feedbackStart{
+    text-align: left;
+    border-bottom: 1px solid rgb(77, 77, 77);
+    max-width: 70%;
+    margin-left: 5%;
+}
+.feedbackAnime{
+    font-size: 35px;
+    width: 70%;
+    color: rgb(141, 141, 141);
+    font-family: 'Electrolize', sans-serif;
+    display: inline-block;
+}
+.feedbacklRate{
+    display: inline-block;
+    margin-left: 20%;
+    margin-top: -9%;
+    font-family: 'Electrolize', sans-serif;
+    border-style: solid;
+    border-radius: 10px;
+    background-color: #616161;
+    width: 7%;
+    text-align: center;
+}
+.feedbackTitle{
+    font-size: 15px;
+    font-family: 'Electrolize', sans-serif;
+    margin-left: 5%;
+}
+.feedbackContent{
+    font-size: 15px;
+    margin-left: 5%;
+}
+.feedbackGenre{
+    font-size: 10px;
+    color:blue;
+    margin-left: 5%;
+   
+}
+.feedbackFinished{
+    border-bottom: 1px solid rgb(77, 77, 77);
+    max-width: 70%;
+    margin-left: 5%;
+}
+
+.username{
+    font-size: 15px;
+    margin-left: 5% ;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-family: 'Electrolize', sans-serif;
+    color: rgb(141, 141, 141);
+}
+
+#textarea{
+    background-color: #2f2e2e;
+    margin-top: 5%;
+    margin-left: 5%;
+    width: 507px;
+    border:2px solid rgb(141, 141, 141) ;
+    border-radius: 2%;
+    
+}
+
+.comment_textarea{
+    width: 500px;
+}
+
+.submit_comment_btn{
+    border-radius: 10px;
+    margin-left: 85%;
+}
+
+.noComments{
+    margin-top: 5%;
+    margin-left: 5%;
+    font-family: 'Electrolize', sans-serif;
+    font-size: 20px;
+}
+
+.commentOwner{
+    margin-top: 3%;
+    margin-left: 10%;
+    font-size: 15px;
+    color: rgb(141, 141, 141);
+    font-family: 'Electrolize', sans-serif;
+}
+
+.commentContent{
+    margin-left: 10%;
+    font-size: 25px;
+    font-family: 'Electrolize', sans-serif;
+    color: red;
+
+}
+.commentStarts{
+    border-bottom: 1px solid rgb(77, 77, 77);
+    max-width: 70%;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+.commentEnds{
+    border-bottom: 1px solid rgb(77, 77, 77);
+    max-width: 70%;
     margin-left: 5%;
 }
 
 
 
-
-
-#comment_table{
-    margin-top: 5%;
-    height: 50%;
-    font-family: 'Electrolize', sans-serif;
-    font-size: xx-large;
-    text-decoration: none;
-    list-style: none;
-}
+/* comment.hbs*/
 
 .comment_header{
     color: red;
-}
-.comment_area{
-    margin-top: 2%;
-    margin-left: 5%;
-    max-width: 47%;
-    border-bottom-left-radius: 20px;
-    background-color: rgb(25, 25, 25);
-    border: 1px solid rgb(210, 140, 1);
 }
 .form_error{
     margin-top: 20%;
@@ -112,83 +262,135 @@
     font-weight: 900;
 }
 
-.the_comment{
-    margin-left: 8%;
-    font-size: 20px;
-    font-family: 'Electrolize', sans-serif;
-    color: rgb(210, 140, 1);
-    font-weight: 800;
-    
-}
-
-.feedback{
-    margin-top: 2%;
-    margin-left: 2%;
-    max-width: 50%;
-    max-height: 30%;
-    border-radius: 5px;
-    border: 1px solid rgb(210, 140, 1);
-    background-color: #000000;
-}
-
-.no-content{
-    font-size: 30px;    
-    font-family: 'Electrolize', sans-serif;
-    font-weight: 800;
-    margin-left: 2%;
-    color: rgb(255, 255, 255);
-}
-
-.submit_comment_btn{
-    width: 20%;
-    border-radius: 10px;
-    margin-left: 75%;
-    text-align: center;
-    background-color:rgb(255, 255, 255);
-    color: #000000;
-    margin-bottom: 2%;
-}
-.submit_comment_btn:hover{
-    background-color:rgb(210, 140, 1);
-}
-.staff_capital{
-    text-transform: capitalize;
-}
 .input_error_msg{
     text-decoration: none;
     list-style: none;
     color: red;
     font-size: 20px;
 }
-#comment_textarea{
-    margin-top: 2%;
-    margin-left: 2%;
-    background-color: rgb(62, 62, 62);
-    max-width: 50%;
-    border-bottom-left-radius: 30px;
-    border: 1px solid rgb(210, 140, 1);
-    background-color: #000000;
+
+
+@media screen and (max-width: 400px) {
+
+    .feedbacklRate{
+        width: 25%;
+        font-size: 15px;
+        margin-left: 30%;
+    }
+    #textarea{
+        max-width: 70%;
+    }
+    .comment_textarea{
+        width: 260px;
+    }
+    .submit_comment_btn{
+        margin-left: 70%;
+    }
+    .noComments{
+        font-size: 10px;
+    }
+    .creat{
+        margin-left: 80%;
+        font-size: 11px;
+        border-radius: 5px;
+    }
+    .animeName{
+        font-size: 5px;
+    }
+    .feedbackTitle{
+        font-size: 5px;
+    }
+    .feedbacks_top{
+        font-size: 10px;
+    }
+    .no-content{
+        font-size: 5px;
+    }
+    .createTitle{
+        font-size: 15px;
+    }
+    .createAnime{
+        width: 300px;
+        height: 20px;
+    }
+    .createContent{
+        width: 300px;
+        height: 40px;
+    }
+    .createGenre{
+        width: 300px;
+        height: 20px;
+    }
+    .createRate{
+        width: 120px;
+        height: 20px;
+    }
+    .submitFeedback{
+        width: 300px;
+        height: 20px;
+    }
+
 }
-.comment_textarea{
-    width: 90%;  
-    margin-left: 5%;
-    resize: none;
-    border-radius: 10px;
-    border: 1px solid rgb(210, 140, 1);
-}
-.username{
-    font-size: 20px;
-    margin-left: 2% ;
-    margin-top: 2%;
-    margin-bottom: -1%;
-    font-family: 'Electrolize', sans-serif;
-    color: rgb(176, 176, 176);
-}
-.notLoggedIn{
-    font-size: 30px;
-    margin-left: 2% ;
-    margin-top: 2%;
-    margin-bottom: -1%;
-    font-family: 'Electrolize', sans-serif;
-    color: rgb(255, 0, 0);
+
+@media screen and (min-width: 400px) and (max-width:1100px) {
+
+    .feedbacklRate{
+        font-size: 10px;
+        width: 12%;
+        margin-left: 5%;
+    }
+    .feedbacks_top{
+        font-size: 25px;
+    }
+    .creat{
+        margin-left: 80%;
+        font-size: 25px;
+    }
+    .eachFeedback{
+        width: 80%;
+    }
+    .animeName{
+        font-size: 10px;
+    }
+    .feedbackTitle{
+        font-size: 15px;
+    }
+    .no-content{
+        font-size: 10px;
+    }
+    .createTitle{
+        font-size: 20px;
+    }
+    .createAnime{
+        width: 300px;
+        height: 30px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .createContent{
+        width: 300px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .createGenre{
+        width: 300px;
+        height: 30px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .createRate{
+        width: 20%;
+        height: 30px;
+    }
+    .submitFeedback{
+        width: 300px;
+        height: 30px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
 }

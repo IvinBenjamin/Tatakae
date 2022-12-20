@@ -5,8 +5,17 @@ module.exports = function({commentManager}){
     
 
     router.post('/:id/create', (req, res) => {
+        var currentdate = new Date(); 
+        var datetime = currentdate.getFullYear() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getDate() + " "  
+                + (currentdate.getHours()+2) + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds();
+
         const newComment ={
             content: req.body.content,
+            date: datetime,
             feedbackId:parseInt(req.params.id),
             userId: parseInt(req.session.userId),
         }

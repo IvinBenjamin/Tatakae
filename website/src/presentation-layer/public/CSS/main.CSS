@@ -23,6 +23,8 @@ body{
   border-radius: 1%;
   border-color: rgb(77, 77, 77);
   border-width: 10px;
+  margin-right: 5%;
+  margin-left: 5%;
 }
 .animeImage{
   display: flex;
@@ -32,32 +34,48 @@ body{
   margin-bottom: 2%;
   max-height: 20%;
 }
+.animeImage:hover{
+  transform: scale(1.4);
+  border-style: solid;
+  border-width: 2px;
+  border-color: red;
+
+}
 .animeTitle{
   display: flex;
-  margin-left: 45%;
-  font-size: 30px;
-  margin-top: -600px;
+  font-family: 'Electrolize', sans-serif;
+  margin-left: 55%;
+  font-size: 35px;
+  font-weight: 900;
+  margin-top: -620px;
 }
 
 .animeRanking{
+  font-family: 'Electrolize', sans-serif;
   display: flex;
-  margin-left: 45%;
-  font-size: 30px;
+  margin-left: 55%;
+  font-size: 35px;
+  font-weight: 900;
+  color: red;
 }
 .animeEpisodes{
+  font-family: 'Electrolize', sans-serif;
   display: flex;
-  margin-left: 45%;
-  font-size: 30px;
+  margin-left: 55%;
+  font-size: 35px;
+  font-weight: 900;
 }
 .animeStatus{
+  font-family: 'Electrolize', sans-serif;
   display: flex;
-  margin-left: 45%;
-  font-size: 30px;
+  margin-left: 55%;
+  font-size: 35px;
+  font-weight: 900;
 }
 
 .watchlistText{
 	color: #ffffff;
-	margin-left: 5%;
+	margin-left: 10%;
   margin-top: 5%;
 	font-weight: 900;
 	font-size: 200%;
@@ -133,6 +151,7 @@ img {
   animation-duration: 10s;
 }
 
+
 @keyframes fade {
 	from {opacity: .6} 
 	to {opacity: 1}
@@ -171,6 +190,7 @@ img {
   #animes{
     margin-left: 5%;
     height: 50px;
+    border-width: 5px;
   }
   .animeImage {
     width: 35%;
@@ -221,7 +241,8 @@ img {
     margin-top: 5%;
   }
   .animes{
-    margin-left: 110px;
+    margin-left: 130px;
+    border-width: 10px;
   }
   .animeImage {
     width: 35%;

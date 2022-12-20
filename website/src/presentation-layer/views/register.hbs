@@ -2,37 +2,27 @@
 
 <title>REGISTER</title>
 
-<div class="center">
-
-    <div class="register_logo">
-        <span style="color:#FFF">REGISTER</span>
-    </div>
+<div class="register_center">
     {{#if errors.length}}
         {{#each errors}}
-            <p class="login_error_msg">{{this}}</p>
+            <p class="register_error_msg">{{this}}</p>
         {{/each}}
     {{/if}}
     <div class="register_center" >
-        {{#if errors.length}}
-            {{#each errors}}
-                <p class="login_error_msg">{{this}}</p>
-            {{/each}}
-        {{/if}}
         <form action="/account/sign-up" method="POST" name="register">
-            <input type="hidden" name="_csrf" value="{{csrfToken}}">
-            <div class="form-group has-success">
-                <label class="form-label" for="input-example-1">Username:</label>
-                <input class="form-input" type="text" value = "{{username}}" name="username" placeholder="Username" required>
+            <div class="Gform-group_has-success">
+                <label class="Gform-label">Username:</label>
+                <input class="Gform-input" name="username" placeholder="Username" required>
             </div>
-            <div class="form-group">
-                <label class="form-label" for="input-example-1">Password:</label>
-                <input class="form-input" type="password" value="{{password}}" name="password" placeholder="Password" required>
+            <div class="Gform-group">
+                <label class="Gform-label">Password:</label>
+                <input class="Gform-input" type="password" name="password" placeholder="Password" required>
             </div>      
-            <div class="form-group">
-                <label class="form-label" for="input-example-1">Repeat Password:</label>
-                <input class="form-input" type="password" value= "{{confirmPassword}}" name="repeat_password" placeholder="Repeat Password" required>
+            <div class="Gform-group">
+                <label class="Gform-label" for="input-example-1">Repeat Password:</label>
+                <input class="Gform-input" type="password" name="repeat_password" placeholder="Repeat Password" required>
             </div> 
-                <button class="btn" type="submit" value="register">Register</button>
+                <button class="registerBtn" type="submit" value="register">Register</button>
         </form>
     </div>
 </div>
